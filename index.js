@@ -1,6 +1,7 @@
 //Our express application
 const express = require('express');
 const app = express();
+const cookieParser = require('cookie-parser')
 
 //The i18n module is loaded
 const i18n = require('i18n');
@@ -32,6 +33,7 @@ i18n.configure({
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
 //Set our application to use our configuration of the i18n module
+app.use(cookieParser());
 app.use(i18n.init);
 //Rest of the application
 
@@ -42,6 +44,17 @@ app.get('/', function (req, res) {
 
 app.get('/page1', function (req, res) {
     res.render('page1');
+});
+
+//Change language
+app.get('/in-:locale', function (req, res) {
+    res.cookie('locale', req.params.locale);
+    res.redirect('/');
+});
+
+app.get('/in-:locale/page1', function (req, res) {
+    res.cookie('locale', req.params.locale);
+    res.redirect('/page1');
 });
 
 //________________USE_EXPRESS____________________

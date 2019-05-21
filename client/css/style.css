@@ -1,0 +1,221 @@
+/* The sidebar menu */
+.sidebar {
+  height: 110%; /* 100% Full-height */
+  width: 300px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: -100px;
+  left: -300px;
+  background-color: #010101; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 160px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* ---- SIDEBAR STYLING ---- */
+
+
+/* OPEN AND CLOSE BUTTONS */
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 100px;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #111;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  position: fixed;
+  z-index: 1;
+}
+
+.openbtn:hover {
+  background-color: #444;
+}
+
+/* PROFILE */
+/* Profile Photo */
+.profile {
+  height: 60px;
+  width: 60px;
+  margin-left: 10px;
+}
+
+/* HEADERS */
+.sidebar h2 {
+  color: rgb(220, 220, 220); 
+  padding-left: 10px; 
+  font-weight: 600;
+}
+
+.sidebar h3 {
+  color: rgba(180, 180, 180);
+  padding-left: 10px;
+  font-weight: 600; 
+}
+
+/* CONTACT, SOCIAL and LANGUAGE LINKS */
+/* The sidebar links */
+.sidebar a {
+  text-decoration: none;
+  color: #818181;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: #f1f1f1;
+}
+
+/* Link Boxes */
+.sidebar .links {
+  padding: 0px 30px;
+}
+.sidebar .links2 {
+  padding: 0px 65px;
+}
+.sidebar .links3 {
+  padding: 0px 70px;
+}
+
+/* Contact */
+.sidebar .contact {
+  display: block;
+  font-size: 15px;
+  padding-bottom: 10px;
+}
+
+/* Social */
+.sidebar .social {
+  font-size: 18px;
+  padding: 0px 12px;
+}
+
+/*Languages*/
+.flag-icon {
+  height: 18px;
+  width: 18px;
+}
+
+/* --- MAIN PAGE STYLING --- */
+/* GENERAL */
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+  margin-left: 0px;
+}
+/* Disc bullet points */
+ul {
+  list-style-type: disc;
+}
+
+/* SUBPARTS */
+/* Headers */
+#main h2 {
+  font-weight: 700;
+}
+/* Paragraphs */
+#main .overview {
+  margin-top: 90px;
+}
+
+#main p {
+  text-align: justify;
+  color: rgb(100, 100, 100);
+}
+
+/* EDUCATION / PROFESSIONAL */
+.eplinks {
+  margin-right: 40px;
+}
+
+.logos {
+  max-width: 120px;
+  -webkit-filter: drop-shadow(1px 1px 0 rgb(151, 151, 151))
+                  drop-shadow(-1px -1px 0 rgb(151, 151, 151));
+  filter: drop-shadow(1px 1px 0 rgb(151, 151, 151)) 
+          drop-shadow(-1px -1px 0 rgb(151, 151, 151));
+}
+
+.logosPhone {
+  width: 30px;
+  height: 30px;
+  display: none;
+}
+
+/* Phone Hide */
+.phoneShow {
+  display: none;
+}
+
+/* ______________________________________________________________________________________ */
+/* __________________________________TABLET_SCALING______________________________________ */
+/* ______________________________________________________________________________________ */
+
+@media screen and (max-width: 1100px) {
+
+  /* Headers */
+  #main h2 {
+    font-size: 45px;
+  }
+
+}
+
+/* ______________________________________________________________________________________ */
+/* __________________________________PHONE_SCALING_______________________________________ */
+/* ______________________________________________________________________________________ */
+
+@media screen and (max-width: 500px) {
+
+/* Headers */
+.sidebar h2 {
+  font-size: 40px;
+}
+
+.sidebar h3 {
+  font-size: 30px;
+}
+
+#main h2 {
+  font-size: 35px;
+}
+
+.sidebar .links a {
+  font-size: 20px;
+}
+
+/* Display Small Logos [not in use], Hide Large */
+.logos {
+  max-width: 80px;
+  display: none;
+}
+
+.logosPhone {
+  display: inline;
+}
+
+/* Hide Links */
+.eplinks {
+  display: none;
+}
+
+/* Phone Hide */
+.phoneHide {
+  display: none;
+}
+
+/* Phone Show */
+.phoneShow {
+  display: inline;
+}
+
+}

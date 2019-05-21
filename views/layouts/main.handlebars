@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Title -->
+    <title>{{i18n "Victor Siret Resume"}}</title>
+
+    <!-- Personal CSS -->
+    <link rel= "stylesheet" href="css/style.css"/>
+
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.2/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.2/js/uikit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.0.2/js/uikit-icons.min.js"></script>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+</head>
+
+<div id="mySidebar" class="sidebar">
+  <!-- Close [x] Button -->
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+  <!-- Sidebar Menu -->
+  <h2><img src="./images/profile.png" class="profile">&nbsp;Victor Siret</h2>
+  
+  <!-- Contact Information -->
+  <h3>&nbsp;{{i18n "Contact"}}</h3>
+  <div class="links">
+    <a href="tel:+33602128094" class="contact"><i class="fas fa-phone"></i>&nbsp;&nbsp;+33 6 02 12 80 94</a>
+    <a href="mailto:victorsiret@gmail.com" class="contact"><i class="fas fa-at"></i>&nbsp;&nbsp;victorsiret@gmail.com</a>
+    <a href="#" class="contact"><i class="fas fa-home"></i>&nbsp;&nbsp;165 rue du G&eacute;n&eacute;ral Leclerc, 78400, Chatou</a>
+  </div>
+
+  <!-- Social Media -->
+  <h3>&nbsp;{{i18n "Social"}}</h3>
+  <div class="links2">
+    <a href="https://www.linkedin.com/in/victor-siret-51579758/" class="social"><i class="fab fa-linkedin fa-lg"></i></a>
+    <a href="https://www.instagram.com/victorsiret/" class="social"><i class="fab fa-instagram fa-lg"></i></a>
+    <a href="https://open.spotify.com/user/6p8s354q9g1az8l9wdseascoz" class="social"><i class="fab fa-spotify fa-lg"></i></a>            
+  </div>
+
+  <!-- Page Language -->
+  <h3>&nbsp;{{i18n "Language"}}</h3>
+  <div class="links3">
+    <a href="./index-fr.html"><img class="flag-icon" src="./icons/flags/france.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./index-es.html"><img class="flag-icon" src="./icons/flags/spain.png"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="./index-de.html"><img class="flag-icon" src="./icons/flags/germany.png"></a>
+  </div>
+
+</div>
+
+<div id="main">
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
+
+{{{body}}}
+
+</div>
+
+<!-- Personal JS -->
+<script src="js/custom.js"></script>
+
+<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+</html>

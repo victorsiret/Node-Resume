@@ -1,17 +1,15 @@
-// Default state of sidebar (1=open)
-let sideBarOut = 0
+// Initialize sidebar state variable
+let sideBarOut;
 
-// Detect Screen Size
+// Detect Screen Size, Set Sidebar status
 let device
-if (window.screen.width < 1000) {device = 1;}
-else {device = 0;}
-
-if (device === 0) {
-  document.getElementById("mySidebar").style.left = "0px";
-  document.getElementById("mySidebar").style.opacity = "1"; 
-  document.getElementById("main").style.marginLeft = "300px";
+if (window.screen.width < 1000) {
+  device = 1;
+  sideBarOut = 0
+  }
+else {device = 0;
   sideBarOut = 1;
-}
+  }
 
 // Set the width of the sidebar to 250px and the left margin of the page content to 250px
 function openNav() {

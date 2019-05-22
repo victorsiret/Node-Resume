@@ -1,2 +1,735 @@
+<h2>Experiments</h2>
+
 <h3>{{i18n "welcomeText"}}</h3>
-<a href="{{ url 'page1' }}">{{i18n "page 1"}}</a>
+<a href="{{url 'page1'}}">{{i18n "page 1"}}</a>
+
+
+{{#arrObj}}
+<h1>{{i18n this.title}}</h1>
+<h2>{{i18n this.photo}}</h2>
+<h3>{{#if this}}{{i18n this.task5}}{{/if}}</h3>
+{{/arrObj}}
+
+<p>_______________________________________________</p>
+
+<!--____________________________________OVERVIEW____________________________________-->
+<div class="overview" uk-scrollspy="cls: uk-animation-slide-right">
+    <h2>Overview</h2>
+    <p>
+        A few words about this resume: It is made with the philosophy of fulfilling the same criteria as a regular resume on the surface, while also offering more
+        detail to any item which grabs your attention. It offers details and visuals for almost every aspect of the CV and gives my point of view on topics to give
+        you a better understanding of who I am.
+    </p>
+    <p>
+        I am an internationally oriented candidate, who has worked and studied in various countries and languages. I am currently on track to graduate in September 2019
+        after completing my final internship in Germany at best it. I am interested in furthering my knowledge and skill in data analysis, technology and project 
+        management.
+    </p>
+</div>
+<br><br>
+
+
+
+<!--____________________________________EDUCATION___________________________________-->
+<div uk-scrollspy="cls: uk-animation-slide-right">
+    <!-- Header -->
+    <h2>Education</h2>
+
+    <!-- Accordion -->
+    <ul uk-accordion="">
+
+        <!-- ESSEC -->
+        <li class="">
+            <a class="uk-accordion-title" href="#">
+                <span class="phoneHide">Master (MSc) in Management - ESSEC Business School (September 2016 - Expected September 2019)</span>
+                <span class="phoneShow">MSc in Management<br><b>ESSEC</b><br>2019</span>
+            </a>
+
+            <div class="uk-accordion-content">
+                <!-- Logo Grid -->
+                <div class="uk-grid">
+                    <div class="uk-width-5-6@l uk-width-3-4@s">
+                        <p>
+                            ESSEC Business School is an international higher education institution founded in 1907 with campuses in France, Singapore and Morocco. Courses are 
+                            taught in French and English.
+                        </p>
+                        <p>
+                            ESSEC's innovative approach to teaching business with an eclectic array of courses allowed me to broaden my scope of knowledge and consider the
+                            vast subject of business in a new light as well as acquire technical knowledge in programming<span class="phoneHide"> (see course list)</span>.
+                        </p>
+                    </div>
+                    <div class="uk-width-1-6@l uk-width-1-4@s">
+                        <img class="uk-vertical-align-middle logos" src="./icons/logos/ESSEC.png">
+                    </div>
+                </div>
+                <br>
+
+                <!-- Links and Courses -->
+                <a class="eplinks" href="http://www.essec.edu/en/pages/about-essec/2/">About</a>
+                <a class="eplinks" href="http://www.essec.edu/en/pages/about-essec/essec-business-school/rankings/">Rankings</a>
+                <a class="eplinks" href="#" uk-toggle="target: #course-essec">Courses</a>
+                <a class="eplinks" onclick="UIkit.notification({message: 'Degree expected September 2019 but all course requirements finished (see: Transcript).'})" href="#">
+                Degree
+                </a>
+                <a class="eplinks" href="./downloads/ESSEC Transcript.pdf">Transcript</a>
+                <ul id="course-essec" hidden>
+                    <li>Philosophy and Commerce</li>
+                    <li>Web Development</li>
+                    <li>VBA Programming</li>
+                    <li>Statistical Inference</li>
+                    <li>Product Design</li>
+                    <li>Consumer Behaviour</li>
+                    <li>Anthropology of Luxury Brands</li>
+                </ul>
+            </div>
+        </li>
+        
+
+        <!-- JMSB -->
+        <li>
+            <a class="uk-accordion-title" href="#">
+                <span class="phoneHide">Bachelor (BComm) in International Business - Concordia University (September 2012- May 2015)</span>
+                <span class="phoneShow">BComm in International Business<br><b>Concordia University</b><br>2015</span>
+            </a>
+
+            <div class="uk-accordion-content">
+                <!-- Logo Grid -->
+                <div class="uk-grid">
+                    <div class="uk-width-5-6@l uk-width-3-4@s">
+                    <p>
+                        Concordia University is an anglophone public comprehensive university. It was founded in 1974 as a merger between Loyola College and Sir George Williams 
+                        University and is located in Montreal, Canada. Courses are taught primarily in English.
+                    </p>
+                    <p>
+                        Concordia's BComm program has a strong core which covers all business topics. The international business specialisation is axed on taking these concepts
+                        and scaling them to the complexities of operation in multiple countries.
+                    </p>
+                    </div>
+                    <div class="uk-width-1-6@l uk-width-1-4@s">
+                        <img class="uk-vertical-align-middle logos" src="./icons/logos/JMSB.png">
+                    </div>
+                </div>
+                <br>
+
+                <!-- Links and Courses -->
+                <a class="eplinks" href="http://www.concordia.ca/jmsb/about.html">About</a>
+                <a class="eplinks" href="http://www.concordia.ca/jmsb/about/rankings.html">Rankings</a>
+                <a class="eplinks" href="#" uk-toggle="target: #course-jmsb">Courses</a>
+                <a class="eplinks" href="./downloads/Concordia Degree.pdf">Degree</a>
+                <a class="eplinks" href="./downloads/Concordia Transcript.pdf">Transcript</a>
+                <ul id="course-jmsb" hidden>
+                    <li>Strategy and Competition</li>
+                    <li>International Financial Management</li>
+                    <li>Cross-Cultural Communication and Management</li>
+                    <li>International Business Law</li>
+                    <li>International Economic Policy and Institutions</li>
+                    <li>Management of Multinational Corporations</li>
+                </ul>
+            </div>
+        </li>
+
+
+        <!-- LI -->
+        <li class="phoneHide">
+            <a class="uk-accordion-title" href="#">
+                <span class="phoneHide">Scientific Baccalaureate (OIB) - Lyc&eacute;e International de Saint Germain-en-Laye (September 2009-July 2012)</span>
+                <span class="phoneShow">Baccalaureate of Science<br><b>Lyc&eacute;e International</b><br>2012</span>
+            </a>
+
+            <div class="uk-accordion-content">
+                <!-- About -->
+                <p>
+                    The Lyc&eacute;e International is a French public school located in Saint-Germain-en-Laye, in the western suburbs of Paris, France. 
+                    Students at the Lyc&eacute;e International are required to be fluent in French and one other language taught in one of the school's fourteen national 
+                    sections.
+                </p>
+                <p>
+                    With excellent academics and an unparalleled diversity of students, this was truly a fantastic school to attend. It greatly contributed to my desire to
+                    learn languages, study and work abroad.
+                </p>
+                <br>
+
+                <!-- Links -->
+                <a class="eplinks" href="http://www.americansection.org/Who-we-are">About</a>
+                <a class="eplinks" href="https://classement-lycees.etudiant.lefigaro.fr/academie-versailles/yvelines/st-germain-en-laye/lycee-international/">Rankings (Le Figaro)</a>
+            </div>
+        </li>
+    </ul>
+    <br><br>
+</div>
+
+<!--____________________________________EXPERIENCE___________________________________-->
+{{#arrObj}}
+<h1>{{i18n this.title}}</h1>
+<h2>{{i18n this.photo}}</h2>
+<h3>{{#if this}}{{i18n this.task5}}{{/if}}</h3>
+{{/arrObj}}
+
+<div uk-scrollspy="cls: uk-animation-slide-right">
+
+    <!-- Header -->
+    <h2>Experience</h2>
+
+    <!-- Accordion -->
+    <ul uk-accordion="">
+
+    {{#arrObj}}
+        <!-- best it -->
+        <li>
+
+            <!-- Title -->
+            <a class="uk-accordion-title" href="#">
+                <span class="phoneHide">{{i18n this.title}}</span>
+                <span class="phoneShow">Strategy Intern<br><b>best it</b><br>03/2019-09/2019</span>
+            </a>
+
+            <!-- Links and Details -->
+            <div class="uk-accordion-content">
+                <p>
+                    {{i18n this.aboutCompany}}
+                </p>
+                <p>
+                    {{i18n this.aboutExperience}}
+                </p>
+                <a class="eplinks" href="{{i18n this.aboutLink}}">About</a>
+                </a>
+            </div>
+            <br>
+            
+            <!-- Logo Grid -->
+            <div class="uk-grid">
+                <div class="uk-width-5-6@l uk-width-3-4@s">
+                <ul>
+                    <li>{{i18n this.task1}}</li>
+                    <li>{{i18n this.task2}}</li>
+                    <li>{{i18n this.task3}}</li>
+                    <li>{{i18n this.task4}}</li>
+                    <li>{{i18n this.task5}}</li>
+                </ul>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s">
+                    <img class="logos" src="{{i18n this.iconLink}}">
+                </div> 
+            </div>
+            <br><br>
+        </li>
+    {{/arrObj}}
+
+    </ul>
+
+<!--____________________________________EXPERIENCE_OLD___________________________________-->
+<div uk-scrollspy="cls: uk-animation-slide-right">
+
+    <!-- Header -->
+    <h2>Experience</h2>
+
+    <!-- Accordion -->
+    <ul uk-accordion="">
+
+        <!-- best it -->
+        <li>
+
+            <!-- Title -->
+            <a class="uk-accordion-title" href="#">
+                <span class="phoneHide">Strategy Intern - best it (March 2019 - September 2019)</span>
+                <span class="phoneShow">Strategy Intern<br><b>best it</b><br>03/2019-09/2019</span>
+            </a>
+
+            <!-- Links and Details -->
+            <div class="uk-accordion-content">
+                <p>
+                    best it is a German E-Commerce consulting company founded in 2000. It currently has around 75 employees and 500 clients, 
+                    with locations in 6 cities in Germany and Austria.
+                </p>
+                <p>
+                    This internship marks a definite turn to data-driven digital topics and was chosen in Germany in order to improve my linguistic skills.
+                </p>
+                <a class="eplinks" href="https://www.bestit-online.de/agentur/">About (in German)</a>
+                <a class="eplinks" href="https://translate.google.com/translate?sl=de&tl=en&u=https%3A%2F%2Fwww.bestit-online.de%2Fagentur%2F">
+                    About (Google Translate to English)
+                </a>
+            </div>
+            <br>
+            
+            <!-- Logo Grid -->
+            <div class="uk-grid">
+                <div class="uk-width-5-6@l uk-width-3-4@s">
+                <ul>
+                    <li>Creation of a general dashboard for continuous monitoring of client site performance</li>
+                    <li>Ongoing analysis of commerce ecosystems regarding customer success</li>
+                    <li>Optimisation of client website interface</li>
+                    <li>Data driven user flow models, to understand weak points in customer journey</li>
+                </ul>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s">
+                    <img class="logos" src="./icons/logos/best-it.png">
+                </div> 
+            </div>
+            <br><br>
+        </li>
+
+
+        <!-- VW -->
+        <li>
+
+            <!-- Title -->
+            <a class="uk-accordion-title" href="#"><span class="phoneHide">
+                Business Analysis and Project Management Intern - Volkswagen France (July 2018 - January 2019)</span>
+                <span class="phoneShow">Business Analysis Intern<br><b>Volkswagen France</b><br>07/2018-01/2019</span>
+            </a>
+
+            <!-- Links and Details -->
+            <div class="uk-accordion-content">
+                <p>
+                    Volkswagen is a German automaker founded in 1937, it was the largest automaker by worldwide sales in 2016 and 2017.
+                </p>
+                <p>
+                    This internship sparked my interest in data management and exploitation while also introducing me to project management. It defined the direction and type
+                    of work I seeked out afterwards.
+                </p>
+                <a class="eplinks" href="https://www.volkswagenag.com/en/group.html">About</a>
+            </div>
+            <br>
+
+            <!-- Logo Grid -->
+            <div class="uk-grid">
+                <div class="uk-width-5-6@l uk-width-3-4@s">
+                <ul>
+                    <li>Creation and diffusion of a weekly reporting on Tableau</li>
+                    <li>Maintaining and cleaning of a database</li>
+                    <li>Creation of specifications and mock-ups for an online Dataviz based on
+                    React and Highcharts frameworks</li>
+                    <li>Analysis of the quality of platform usage by partners</li>
+                    <li>Setting fixed meetings between the agency we work with and establishing
+                    the talking points of these meetings</li>
+                </ul>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s">
+                    <img class="logos" src="./icons/logos/VW.png">
+                </div> 
+            </div>
+            <br><br>
+        </li>
+
+
+        <!-- VP -->
+        <li>
+
+            <!-- Title -->
+            <a class="uk-accordion-title" href="#">
+                <span class="phoneHide">Sales Producer - Vente-priv&eacute;e (May 2016 - September 2016)</span>
+                <span class="phoneShow">Sales Producer<br><b>Vente-privee</b><br>05/2016-09/2016</span>
+            </a>
+
+            <!-- Details and Links -->
+            <div class="uk-accordion-content">
+                <p>Vente-priv&eacute;e is a French ecommerce company that pioneered the model of online flash sales, founded in 2001. It has since changed name and is now 
+                    known as Veepee.</p>
+                <p>This was my first regular work contract. It was here that I began seriously using Excel and VBA to automate, improve and quicken my work.</p>
+                <a class="eplinks" href="https://www.veepee.com/fr-fr/about.html">About</a>
+            </div>
+            <br>
+
+            <!-- Logo Grid -->
+            <div class="uk-grid">
+                <div class="uk-width-5-6@l uk-width-3-4@s">
+                    <ul>
+                        <li>Sales production for the UK market</li>
+                        <li>Tailoring size, price and descriptions of products for the UK market</li>
+                        <li>Diverse side-projects in order to automate tasks such as convert sizes,
+                            description and prices according to intended output, creation of an excelbased
+                            agenda which helps with organisation and planning and automates
+                            emails to send</li>
+                        <li>Coordination with technical teams to fix coding problems or otherwise</li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s">
+                    <img class="logos" src="./icons/logos/VP.png">
+                </div>
+            </div>
+            <br><br>
+        </li>
+
+
+        <!-- LVMH -->
+        <li>
+
+            <!-- Title -->
+            <a class="uk-accordion-title" href="#">
+                <span class="phoneHide">Digital Marketing Intern - Guerlain Canada (May 2015 - July 2015)</span>
+                <span class="phoneShow">Digital Marketing Intern<br><b>Guerlain Canada</b><br>05/2015-07/2015</span>
+            </a>
+
+            <!-- Details and Links -->
+            <div class="uk-accordion-content">
+                <p>Guerlain a French perfume, cosmetics and skincare house. Founded in 1828, it is among the oldest in the world. It was purchased by the LVMH Group in 1994.</p>
+                <p>This was my first work experience. It gave me a taste of digital topics and began my prolonged interest in web-related work.</p>
+                <a class="eplinks" href="https://www.guerlain.com/int/en-int/guerlain-house">About</a>
+                <a class="eplinks" href="./downloads/William Lescure.pdf">Recommendation Letter</a>
+            </div>
+            <br>
+
+            <!-- Logo Grid -->
+            <div class="uk-grid">
+                <div class="uk-width-5-6@l uk-width-3-4@s">
+                    <ul>
+                        <li>Optimisation of the Guerlain.ca webpage, with a study of the competition</li>
+                        <li>Redesign of retailers’ websites to better fit brand image</li>
+                        <li>Collaboration with brand ambassadors (Youtube celebrities)</li>
+                        <li>Creation of an automated excel sheet to transpose brand product
+                            descriptions to fit company standards</li>
+                        <li>Collaboration with external media agency on banner design</li>
+                    </ul>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s">
+                    <img class="logos" src="./icons/logos/Guerlain.png">
+                </div>
+            </div>
+            <br><br>
+        </li>
+
+
+        <!-- Eclectic -->
+        <li class="phoneHide">
+            <a class="uk-accordion-title" href="#">Eclectic Work Experience</a>
+            <div class="uk-accordion-content">
+                <ul>
+                    <li>Parts Designer at Concordia SAE Formula Team - Autumn 2012</li>
+                    <li>Runner at Pino Restaurant Montreal - Summer 2014</li>
+                    <li>Crew Member at McDonald's - Spring 2016</li>
+                    <li>Winemaker Assistant in the Barcelona Region - Summer 2017</li>
+                </ul>
+            </div>
+        </li>
+
+
+    </ul>
+    <br><br>
+</div>
+
+
+
+<!--____________________________________LANGUAGE___________________________________-->
+<div uk-scrollspy="cls: uk-animation-slide-right">
+
+    <!-- Header -->
+    <h2>Languages</h2>
+
+    <!-- Accordion -->
+    <ul uk-accordion="">
+
+        <!-- English -->
+        <li>
+            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/england.png">&nbsp;&nbsp;&nbsp;English - Native</a>
+            <div class="uk-accordion-content">
+                <p>Excellent grasp of English, while not my mother tongue it is undoubtedly the language I speak best. I studied a total of 12 years in English.</p>
+                <ul>
+                <li>4 years in Public School in New Jersey (ages 8 to 12)</li>
+                <li>5 years of American Section at the Lyc&eacute;e International (ages 12 to 17)</li>
+                <li>3 years of full time studies in English at Concordia University (ages 17 to 20)</li>
+                </ul>
+                <br>
+            </div>
+        </li>
+
+
+        <!-- French -->
+        <li class="">
+            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/france.png">&nbsp;&nbsp;&nbsp;French - Native</a>
+            <div class="uk-accordion-content">
+                <p>French is my mother tongue. I studied a total of 10 years in French.</p>
+                <ul>
+                    <li>8 years of public school in France (ages 5 to 8 and 12 to 17)</li>
+                    <li>Obtained French Baccalaureate</li>
+                    <li>Studied at ESSEC for 2 years in French.</li>
+                    <li>17 years total lived in France</li>
+                </ul>
+                <br>
+            </div>
+        </li>
+
+
+        <!-- Spanish -->
+        <li>
+            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/spain.png">&nbsp;&nbsp;&nbsp;Spanish - Advanced</a>
+            <div class="uk-accordion-content">
+                <p>Fluent in conversation, occasional mistakes. I studied Spanish a total of 7 years in school.</p>
+                <ul>
+                <li>7 years of Spanish classes in Middle and High School (ages 11 to 17)</li>
+                <li>Exchange program in Middle School (age 14)</li>
+                <li>1 month working in a Vinyard in the Barcelona region (age 22)</li>
+                </ul>
+                <br>
+            </div>
+        </li>
+
+
+        <!-- German -->
+        <li>
+            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/germany.png">&nbsp;&nbsp;&nbsp;German - Intermediate</a>
+            <div class="uk-accordion-content">
+                <p>Capable of conversing but with mistakes. I studied a total of 5 years of German in school.</p>
+                <ul>
+                    <li>5 years of German classes in Middle and High School</li>
+                    <li>1 year of German classes at ESSEC</li>
+                </ul>
+                <br>
+            </div>
+        </li>
+
+
+        <!-- Italian -->
+        <li>
+            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/italy.png">&nbsp;&nbsp;&nbsp;Italian - Beginner</a>
+            <div class="uk-accordion-content">
+                <p>Easily capable of forming sentences, good reading comprehension and mainly lacking in vocabulary to speak fluently.</p>
+                <ul>
+                <li>Practice on Duolingo</li>
+                <li>Anki flashcards</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+
+    <br><br>
+</div>
+
+
+
+<!--_____________________________________SKILLS____________________________________-->
+<div uk-scrollspy="cls: uk-animation-slide-right">
+
+    <!-- Header -->
+    <h2>Skills</h2>
+
+    <!-- Accordion -->
+    <ul uk-accordion="">
+
+        <!-- MS Office -->
+        <li>
+            <a class="uk-accordion-title" href="#"><i class="fab fa-windows"></i>&nbsp;&nbsp;&nbsp;Microsoft Office</a>
+            <div class="uk-accordion-content uk-grid">
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+                    <p>Word</p> 
+                    <p>Excel</p>
+                    <p>Powerpoint</p>
+                    <p>Access</p>
+                    <br>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                </div>
+                
+            </div>
+        </li>
+
+
+        <!-- Adobe -->
+        <li>
+            <a class="uk-accordion-title" href="#"><i class="fab fa-adobe"></i>&nbsp;&nbsp;&nbsp;Adobe Creative Suite</a>
+            <div class="uk-accordion-content uk-grid">
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+                    <p>Photoshop</p>
+                    <p>Illustrator</p>
+                    <p>Premiere</p>
+                    <p>After Effects</p>
+                    <br>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                </div>
+            </div>
+        </li>
+
+
+        <!-- BI -->
+        <li>
+            <a class="uk-accordion-title" href="#"><i class="far fa-chart-bar"></i>&nbsp;&nbsp;&nbsp;Business Intelligence</a>
+            <div class="uk-accordion-content uk-grid">
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+                    <p>Tableau</p>
+                    <p>Power BI</p>
+                    <br>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                </div>
+            </div>
+        </li>
+
+
+        <!-- Programming -->
+        <li>
+            <a class="uk-accordion-title" href="#"><i class="fas fa-terminal fa-xs"></i>&nbsp;&nbsp;&nbsp;Programming</a>
+            <div class="uk-accordion-content uk-grid">
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+                    <p>HTML</p>
+                    <p>CSS</p>
+                    <p>JavaScript</p>
+                    <p>VBA</p>
+                    <p>R</p>
+                    <p>SQL</p>
+                </div>
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                </div>
+            </div>
+        </li>
+    </ul>
+
+    <br><br>
+</div>
+
+
+
+<!--___________________________________INTERESTS___________________________________-->
+<div uk-scrollspy="cls: uk-animation-slide-right">
+
+    <!-- Header -->
+    <h2>Interests</h2>
+
+    <!-- Accordion -->
+    <ul uk-accordion="">
+
+        <!-- Drawing -->
+        <li>
+            <a class="uk-accordion-title" href="#"><i class="fas fa-crop"></i>&nbsp;&nbsp;&nbsp;Drawing and Graphic Design</a>
+            <div class="uk-accordion-content">
+                <p>A few examples of my drawings (<a href="https://drive.google.com/drive/folders/0B-n3dOjy-35oX09ISXprN2JhN28?usp=sharing">see more</a>) and surreal 
+                    photo-montages done on Photoshop using personal photos (<a href="https://www.instagram.com/victorsiret/">see more</a>).</p>
+                <div class="uk-child-width-1-6@l uk-child-width-1-3" uk-grid uk-lightbox="animation: slide">
+                    <div>
+                        <a class="uk-inline" href="images/art/ducati848.jpg" data-caption="Ducati 848 Superbike">
+                            <img src="images/art/ducati848-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/art/xv750cafe.jpg" data-caption="Honda XV 750 Modified as a Cafe Racer">
+                            <img src="images/art/xv750cafe-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/art/shalimar.jpg" data-caption="Shalimar by Guerlain">
+                            <img src="images/art/shalimar-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/art/18-3.jpg" data-caption="Lyon">
+                            <img src="images/art/18-3-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/art/31-1.jpg" data-caption="Portugal, Turks and Caicos">
+                            <img src="images/art/31-1-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/art/20-2.jpg" data-caption="Milan">
+                            <img src="images/art/20-2-tn.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </li>
+        
+        
+        <!-- Tinkering -->
+        <li>
+            <a class="uk-accordion-title" href="#"><i class="fas fa-wrench"></i>&nbsp;&nbsp;&nbsp;Tinkering and Carpentry</a>
+            <div class="uk-accordion-content">
+                <p>Photos of my fixed-gear bicycle built using a vintage Peugeot road frame, and of a bar built from scratch.</p>
+                <div class="uk-child-width-1-6@l uk-child-width-1-3" uk-grid uk-lightbox="animation: slide">
+                    <div>
+                        <a class="uk-inline" href="images/build/fixie-1.jpg" data-caption="Old Peugeot Bicycle before strip down and modifications">
+                            <img src="images/build/fixie-1-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/build/fixie-2.jpg" data-caption="Bicycle after first round of modifications">
+                            <img src="images/build/fixie-2-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/build/fixie-3.jpg" data-caption="Bicycle with finishing touches">
+                            <img src="images/build/fixie-3-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/build/bar-1.jpg" data-caption="Bar with a few planks in place, unpainted">
+                            <img src="images/build/bar-1-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/build/bar-2.jpg" data-caption="Finished empty bar">
+                            <img src="images/build/bar-2-tn.jpg" alt="">
+                        </a>
+                    </div>
+                    <div>
+                        <a class="uk-inline" href="images/build/bar-3.jpg" data-caption="Bar with finishing touches and decorations">
+                            <img src="images/build/bar-3-tn.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </li>
+
+
+        <!-- Psychology -->
+        <li>
+            <a class="uk-accordion-title" href="#"><i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;Psychology</a>
+            <div class="uk-accordion-content">
+                <p>Here is a collection of my favourite psychology books.</p>
+                <div class="uk-child-width-1-6@l uk-child-width-1-3" uk-grid>
+                    <div>
+                        <a href="https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555">
+                            <img src="icons/books/thinking-fast-slow.jpg" class="logos uk-align-center">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.amazon.com/Nudge-Improving-Decisions-Health-Happiness/dp/014311526X">
+                            <img src="icons/books/nudge.jpeg" class="logos uk-align-center">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="www.amazon.com/Predictably-Irrational-Revised-enlarged-Ariely/dp/B0076YDN7U">
+                            <img src="icons/books/predictably.jpeg" class="logos uk-align-center">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.amazon.com/Everybody-Lies-Internet-About-Really/dp/0062390856">
+                            <img src="icons/books/everybody-lies.jpg" class="logos uk-align-center">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.amazon.com/Flow-Psychology-Experience-Perennial-Classics/dp/0061339202">
+                            <img src="icons/books/flow.jpg" class="logos uk-align-center">
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://www.amazon.fr/dp/0330492276/ref=pe_3044141_189395771_TE_dp_1">
+                            <img src="icons/books/psychopath-test.jpeg" class="logos uk-align-center">
+                        </a>
+                    </div>
+                </div>
+                <br><br>
+            </div>
+        </li>
+
+    </ul>
+    <br><br>
+
+</div>

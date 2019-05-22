@@ -1,18 +1,21 @@
+/* ______________________________________________________________________________________ */
+/* __________________________________GENERAL_SCALING_____________________________________ */
+/* ______________________________________________________________________________________ */
+
+/*________________________SIDEBAR_STYLING________________________*/
 /* The sidebar menu */
 .sidebar {
   height: 110%; /* 100% Full-height */
   width: 300px; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  z-index: 2; /* Stay on top */
   top: -100px;
-  left: -300px;
+  left: 0px;
   background-color: #010101; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 160px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
 }
-
-/* ---- SIDEBAR STYLING ---- */
 
 
 /* OPEN AND CLOSE BUTTONS */
@@ -40,6 +43,7 @@
 .openbtn:hover {
   background-color: #444;
 }
+
 
 /* PROFILE */
 /* Profile Photo */
@@ -105,13 +109,15 @@
   width: 18px;
 }
 
-/* --- MAIN PAGE STYLING --- */
+
+
+/*________________________MAIN_PAGE_STYLING________________________*/
 /* GENERAL */
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-left .5s; /* If you want a transition effect */
   padding: 20px;
-  margin-left: 0px;
+  margin-left: 300px;
 }
 /* Disc bullet points */
 ul {
@@ -157,6 +163,9 @@ ul {
   display: none;
 }
 
+
+
+
 /* ______________________________________________________________________________________ */
 /* __________________________________TABLET_SCALING______________________________________ */
 /* ______________________________________________________________________________________ */
@@ -169,6 +178,32 @@ ul {
   }
 
 }
+
+
+
+/* ______________________________________________________________________________________ */
+/* _______________________________SIDEBAR_POSITION_______________________________________ */
+/* ______________________________________________________________________________________ */
+
+@media screen and (max-width: 1000px) {
+/* The sidebar menu */
+  .sidebar {
+    left: -300px;
+  }
+
+/* Remove UIkit margin */
+  #mySidebar h2 {
+    margin-top: 0px;
+  }
+
+/* Main page */
+  #main {
+    margin-left: 0px;
+  }
+}
+
+
+
 
 /* ______________________________________________________________________________________ */
 /* __________________________________PHONE_SCALING_______________________________________ */

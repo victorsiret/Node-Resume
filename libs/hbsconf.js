@@ -2,8 +2,6 @@
 //Load i18n module and our urls.json dictionary from the same folder that our controllers are (just to keep them in an easy to remember place)
 const i18n = require('i18n');
 const urls = require('../controllers/urls.json');
-const experience = require('../controllers/experience.json');
-const elements = require('../controllers/elements.json');
 
 module.exports = {
   //Setup our default layout
@@ -29,10 +27,5 @@ module.exports = {
       //We only need to access to the JSON previously loaded, and   return the value of the key we receive as a parameter
       return urls[name];
     },
-
-    //eXpeRImENtal
-    explist: function(name){
-      return experience[name];
-    }
   }
 }

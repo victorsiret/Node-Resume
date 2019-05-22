@@ -11,32 +11,38 @@ const i18n = require('i18n');
 const handlebars = require('express-handlebars').create(require('./libs/hbsconf.js'));
 
 
+
+//________________ARRAY_INFO____________________
 //JSONs with Lists
-const elements = require('./controllers/elements.json');
-const experience = require('./controllers/experience.json');
-let arrArr = [];
-let arrObj = [];
-
-//Create Matrix
-for(let i = 0; i < experience.length; i++){
-    arrArr[i] = [];
-    for(let j = 0; j < elements.length; j++){
-        arrArr[i][j] = experience[i] + "-" + elements[j];
+//Education
+    //Load Arrays
+    const eduElements = require('./controllers/eduElements.json');
+    const education = require('./controllers/education.json');
+    //Create Array
+    let arrEdu = [];
+    for(let i = 0; i < education.length; i++){
+        arrEdu[i] = {};
+        arrEdu[i]["id"] = education[i];
+        for(let j = 0; j < eduElements.length; j++){
+            arrEdu[i][eduElements[j]] = education[i] + "-" + eduElements[j];
+        }
     }
-}
 
-for(let i = 0; i < experience.length; i++){
-    arrObj[i] = {};
-    for(let j = 0; j < elements.length; j++){
-        arrObj[i][elements[j]] = experience[i] + "-" + elements[j];
+//Experience
+    //Load Arrays
+    const expElements = require('./controllers/expElements.json');
+    const experience = require('./controllers/experience.json');
+    //Create Array
+    let arrExp = [];
+    for(let i = 0; i < experience.length; i++){
+        arrExp[i] = {};
+        arrExp[i]["id"] = experience[i];
+        for(let j = 0; j < expElements.length; j++){
+            arrExp[i][expElements[j]] = experience[i] + "-" + expElements[j];
+        }
     }
-}
 
-console.log(arrArr);
-console.log(arrObj);
 
-//experiments
-const tommy = "tommy";
 
 
 
@@ -75,7 +81,7 @@ app.use(i18n.init);
 //________________RENDER_PAGES_________________________
 //Render home page
 app.get('/', function (req, res) {
-    res.render('home', {experience, elements, arrArr, arrObj});
+    res.render('home', {arrEdu, arrExp});
 });
 
 //TEST PAGE /!\

@@ -1,11 +1,3 @@
-<h2>Experiments</h2>
-
-<h3>{{i18n "welcomeText"}}</h3>
-<a href="{{url 'page1'}}">{{i18n "page 1"}}</a>
-
-
-<p>_______________________________________________</p>
-
 <!--____________________________________OVERVIEW____________________________________-->
 <div class="overview" uk-scrollspy="cls: uk-animation-slide-right">
     <!-- Header -->
@@ -15,11 +7,13 @@
     <p>
         {{i18n "overviewText"}}
     </p>
-    
+
 </div>
 <br><br>
 
-
+{{#each tommy}}
+{{i18n this}}
+{{/each}}
 
 <!--____________________________________EDUCATION___________________________________-->
 <div uk-scrollspy="cls: uk-animation-slide-right">
@@ -127,11 +121,11 @@
             <div class="uk-grid">
                 <div class="uk-width-5-6@l uk-width-3-4@s">
                 <ul>
-                    <li>{{i18n this.task1}}</li>
-                    <li>{{i18n this.task2}}</li>
-                    <li>{{i18n this.task3}}</li>
-                    <li>{{i18n this.task4}}</li>
-                    <li>{{i18n this.task5}}</li>
+                    <li class="{{i18n this.task1}}">{{i18n this.task1}}</li>
+                    <li class="{{i18n this.task2}}">{{i18n this.task2}}</li>
+                    <li class="{{i18n this.task3}}">{{i18n this.task3}}</li>
+                    <li class="{{i18n this.task4}}">{{i18n this.task4}}</li>
+                    <li class="{{i18n this.task5}}">{{i18n this.task5}}</li>
                 </ul>
                 </div>
                 <div class="uk-width-1-6@l uk-width-1-4@s">
@@ -158,81 +152,26 @@
     <!-- Accordion -->
     <ul uk-accordion="">
 
-        <!-- English -->
+        <!-- Template -->
+        {{#arrLan}}
         <li>
-            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/england.png">&nbsp;&nbsp;&nbsp;English - Native</a>
+            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/{{this.id}}.png">&nbsp;&nbsp;&nbsp;{{i18n this.name}} - {{i18n this.level}}</a>
             <div class="uk-accordion-content">
-                <p>Excellent grasp of English, while not my mother tongue it is undoubtedly the language I speak best. I studied a total of 12 years in English.</p>
+                <p>{{i18n this.desc}}</p>
                 <ul>
-                <li>4 years in Public School in New Jersey (ages 8 to 12)</li>
-                <li>5 years of American Section at the Lyc&eacute;e International (ages 12 to 17)</li>
-                <li>3 years of full time studies in English at Concordia University (ages 17 to 20)</li>
+                <li class="{{i18n this.academic}}">{{i18n this.academic}}</li>
+                <li class="{{i18n this.professional}}">{{i18n this.professional}}</li>
+                <li class="{{i18n this.personal}}">{{i18n this.personal}}</li>
                 </ul>
                 <br>
             </div>
         </li>
+        {{/arrLan}}
 
-
-        <!-- French -->
-        <li class="">
-            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/france.png">&nbsp;&nbsp;&nbsp;French - Native</a>
-            <div class="uk-accordion-content">
-                <p>French is my mother tongue. I studied a total of 10 years in French.</p>
-                <ul>
-                    <li>8 years of public school in France (ages 5 to 8 and 12 to 17)</li>
-                    <li>Obtained French Baccalaureate</li>
-                    <li>Studied at ESSEC for 2 years in French.</li>
-                    <li>17 years total lived in France</li>
-                </ul>
-                <br>
-            </div>
-        </li>
-
-
-        <!-- Spanish -->
-        <li>
-            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/spain.png">&nbsp;&nbsp;&nbsp;Spanish - Advanced</a>
-            <div class="uk-accordion-content">
-                <p>Fluent in conversation, occasional mistakes. I studied Spanish a total of 7 years in school.</p>
-                <ul>
-                <li>7 years of Spanish classes in Middle and High School (ages 11 to 17)</li>
-                <li>Exchange program in Middle School (age 14)</li>
-                <li>1 month working in a Vinyard in the Barcelona region (age 22)</li>
-                </ul>
-                <br>
-            </div>
-        </li>
-
-
-        <!-- German -->
-        <li>
-            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/germany.png">&nbsp;&nbsp;&nbsp;German - Intermediate</a>
-            <div class="uk-accordion-content">
-                <p>Capable of conversing but with mistakes. I studied a total of 5 years of German in school.</p>
-                <ul>
-                    <li>5 years of German classes in Middle and High School</li>
-                    <li>1 year of German classes at ESSEC</li>
-                </ul>
-                <br>
-            </div>
-        </li>
-
-
-        <!-- Italian -->
-        <li>
-            <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/italy.png">&nbsp;&nbsp;&nbsp;Italian - Beginner</a>
-            <div class="uk-accordion-content">
-                <p>Easily capable of forming sentences, good reading comprehension and mainly lacking in vocabulary to speak fluently.</p>
-                <ul>
-                <li>Practice on Duolingo</li>
-                <li>Anki flashcards</li>
-                </ul>
-            </div>
-        </li>
     </ul>
 
-    <br><br>
 </div>
+<br><br>
 
 
 
@@ -245,92 +184,27 @@
     <!-- Accordion -->
     <ul uk-accordion="">
 
-        <!-- MS Office -->
+        <!-- Template -->
+        {{#arrSki}}
         <li>
-            <a class="uk-accordion-title" href="#"><i class="fab fa-windows"></i>&nbsp;&nbsp;&nbsp;Microsoft Office</a>
+            <a class="uk-accordion-title" href="#"><i class="{{this.logo}}"></i>&nbsp;&nbsp;&nbsp;{{this.name}}</a>
             <div class="uk-accordion-content uk-grid">
                 <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
-                    <p>Word</p> 
-                    <p>Excel</p>
-                    <p>Powerpoint</p>
-                    <p>Access</p>
+                    {{#each this.skills}}<p>{{this}}</p>{{/each}}
                     <br>
                 </div>
                 <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
+                    {{#each this.levels}}<p>{{{skillHTML this}}}</p>{{/each}}
                 </div>
                 
             </div>
         </li>
+        {{/arrSki}}
 
-
-        <!-- Adobe -->
-        <li>
-            <a class="uk-accordion-title" href="#"><i class="fab fa-adobe"></i>&nbsp;&nbsp;&nbsp;Adobe Creative Suite</a>
-            <div class="uk-accordion-content uk-grid">
-                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
-                    <p>Photoshop</p>
-                    <p>Illustrator</p>
-                    <p>Premiere</p>
-                    <p>After Effects</p>
-                    <br>
-                </div>
-                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                </div>
-            </div>
-        </li>
-
-
-        <!-- BI -->
-        <li>
-            <a class="uk-accordion-title" href="#"><i class="far fa-chart-bar"></i>&nbsp;&nbsp;&nbsp;Business Intelligence</a>
-            <div class="uk-accordion-content uk-grid">
-                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
-                    <p>Tableau</p>
-                    <p>Power BI</p>
-                    <br>
-                </div>
-                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                </div>
-            </div>
-        </li>
-
-
-        <!-- Programming -->
-        <li>
-            <a class="uk-accordion-title" href="#"><i class="fas fa-terminal fa-xs"></i>&nbsp;&nbsp;&nbsp;Programming</a>
-            <div class="uk-accordion-content uk-grid">
-                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
-                    <p>HTML</p>
-                    <p>CSS</p>
-                    <p>JavaScript</p>
-                    <p>VBA</p>
-                    <p>R</p>
-                    <p>SQL</p>
-                </div>
-                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                    <p><i class="fas fa-circle fa-sm"></i><i class="fas fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i><i class="far fa-circle fa-sm"></i></p>
-                </div>
-            </div>
-        </li>
     </ul>
 
-    <br><br>
 </div>
+<br><br>
 
 
 
@@ -343,133 +217,28 @@
     <!-- Accordion -->
     <ul uk-accordion="">
 
-        <!-- Drawing -->
+        <!-- Template -->
+        {{#arrInt}}
         <li>
-            <a class="uk-accordion-title" href="#"><i class="fas fa-crop"></i>&nbsp;&nbsp;&nbsp;Drawing and Graphic Design</a>
+            <a class="uk-accordion-title" href="#"><i class="{{this.logo}}"></i>&nbsp;&nbsp;&nbsp;{{i18n this.name}}</a>
             <div class="uk-accordion-content">
-                <p>A few examples of my drawings (<a href="https://drive.google.com/drive/folders/0B-n3dOjy-35oX09ISXprN2JhN28?usp=sharing">see more</a>) and surreal 
-                    photo-montages done on Photoshop using personal photos (<a href="https://www.instagram.com/victorsiret/">see more</a>).</p>
+                <p>{{i18n this.desc}}</p>
                 <div class="uk-child-width-1-6@l uk-child-width-1-3" uk-grid uk-lightbox="animation: slide">
-                    <div>
-                        <a class="uk-inline" href="images/art/ducati848.jpg" data-caption="Ducati 848 Superbike">
-                            <img src="images/art/ducati848-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/art/xv750cafe.jpg" data-caption="Honda XV 750 Modified as a Cafe Racer">
-                            <img src="images/art/xv750cafe-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/art/shalimar.jpg" data-caption="Shalimar by Guerlain">
-                            <img src="images/art/shalimar-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/art/18-3.jpg" data-caption="Lyon">
-                            <img src="images/art/18-3-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/art/31-1.jpg" data-caption="Portugal, Turks and Caicos">
-                            <img src="images/art/31-1-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/art/20-2.jpg" data-caption="Milan">
-                            <img src="images/art/20-2-tn.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <br><br>
-            </div>
-        </li>
-        
-        
-        <!-- Tinkering -->
-        <li>
-            <a class="uk-accordion-title" href="#"><i class="fas fa-wrench"></i>&nbsp;&nbsp;&nbsp;Tinkering and Carpentry</a>
-            <div class="uk-accordion-content">
-                <p>Photos of my fixed-gear bicycle built using a vintage Peugeot road frame, and of a bar built from scratch.</p>
-                <div class="uk-child-width-1-6@l uk-child-width-1-3" uk-grid uk-lightbox="animation: slide">
-                    <div>
-                        <a class="uk-inline" href="images/build/fixie-1.jpg" data-caption="Old Peugeot Bicycle before strip down and modifications">
-                            <img src="images/build/fixie-1-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/build/fixie-2.jpg" data-caption="Bicycle after first round of modifications">
-                            <img src="images/build/fixie-2-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/build/fixie-3.jpg" data-caption="Bicycle with finishing touches">
-                            <img src="images/build/fixie-3-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/build/bar-1.jpg" data-caption="Bar with a few planks in place, unpainted">
-                            <img src="images/build/bar-1-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/build/bar-2.jpg" data-caption="Finished empty bar">
-                            <img src="images/build/bar-2-tn.jpg" alt="">
-                        </a>
-                    </div>
-                    <div>
-                        <a class="uk-inline" href="images/build/bar-3.jpg" data-caption="Bar with finishing touches and decorations">
-                            <img src="images/build/bar-3-tn.jpg" alt="">
-                        </a>
-                    </div>
-                </div>
-                <br><br>
-            </div>
-        </li>
 
-
-        <!-- Psychology -->
-        <li>
-            <a class="uk-accordion-title" href="#"><i class="fas fa-users"></i>&nbsp;&nbsp;&nbsp;Psychology</a>
-            <div class="uk-accordion-content">
-                <p>Here is a collection of my favourite psychology books.</p>
-                <div class="uk-child-width-1-6@l uk-child-width-1-3" uk-grid>
+                    {{#each this.items}}
                     <div>
-                        <a href="https://www.amazon.com/Thinking-Fast-Slow-Daniel-Kahneman/dp/0374533555">
-                            <img src="icons/books/thinking-fast-slow.jpg" class="logos uk-align-center">
+                        <a class="uk-inline" href="images/interests/{{this}}.jpg" data-caption="{{i18n this}}">
+                            <img src="images/interests/{{this}}-tn.jpg" class="{{../class}}" alt="">
                         </a>
                     </div>
-                    <div>
-                        <a href="https://www.amazon.com/Nudge-Improving-Decisions-Health-Happiness/dp/014311526X">
-                            <img src="icons/books/nudge.jpeg" class="logos uk-align-center">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="www.amazon.com/Predictably-Irrational-Revised-enlarged-Ariely/dp/B0076YDN7U">
-                            <img src="icons/books/predictably.jpeg" class="logos uk-align-center">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.amazon.com/Everybody-Lies-Internet-About-Really/dp/0062390856">
-                            <img src="icons/books/everybody-lies.jpg" class="logos uk-align-center">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.amazon.com/Flow-Psychology-Experience-Perennial-Classics/dp/0061339202">
-                            <img src="icons/books/flow.jpg" class="logos uk-align-center">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://www.amazon.fr/dp/0330492276/ref=pe_3044141_189395771_TE_dp_1">
-                            <img src="icons/books/psychopath-test.jpeg" class="logos uk-align-center">
-                        </a>
-                    </div>
+                    {{/each}}
                 </div>
                 <br><br>
             </div>
         </li>
+        {{/arrInt}}
 
     </ul>
-    <br><br>
 
 </div>
+<br><br>

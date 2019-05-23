@@ -87,7 +87,7 @@
   padding: 0px 65px;
 }
 .sidebar .links3 {
-  padding: 0px 70px;
+  padding: 0px 50px;
 }
 
 /* Contact */
@@ -105,8 +105,8 @@
 
 /*Languages*/
 .flag-icon {
-  height: 18px;
-  width: 18px;
+  height: 20px;
+  width: 20px;
 }
 
 
@@ -119,6 +119,7 @@
   padding: 20px;
   margin-left: 300px;
 }
+
 /* Disc bullet points */
 ul {
   list-style-type: disc;
@@ -129,6 +130,7 @@ ul {
 #main h2 {
   font-weight: 700;
 }
+
 /* Paragraphs */
 #main .overview {
   margin-top: 90px;
@@ -172,7 +174,7 @@ ul {
 
 @media screen and (max-width: 1100px) {
 
-  /* Headers */
+/* Headers */
   #main h2 {
     font-size: 45px;
   }

@@ -2,6 +2,7 @@
 //Load i18n module and our urls.json dictionary from the same folder that our controllers are (just to keep them in an easy to remember place)
 const i18n = require('i18n');
 const urls = require('../controllers/urls.json');
+const handlebars = require('express-handlebars')
 
 module.exports = {
   //Setup our default layout
@@ -27,5 +28,10 @@ module.exports = {
       //We only need to access to the JSON previously loaded, and   return the value of the key we receive as a parameter
       return urls[name];
     },
+
+    //Creates html text based on skill level between one and four, comprised of empty and full circles
+    skillHTML: function(number){
+      return '<i class="fas fa-circle fa-sm"></i>'.repeat(number) + '<i class="far fa-circle fa-sm"></i>'.repeat(4-number);
+    }
   }
 }

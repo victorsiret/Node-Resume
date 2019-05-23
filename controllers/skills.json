@@ -1,0 +1,24 @@
+[ {
+    "name"        : "Microsoft Office",
+    "logo"        : "fab fa-windows",
+    "skills"      : ["Word", "Excel", "Powerpoint", "Access"],
+    "levels"      : [4, 4, 4, 2]
+    },
+{
+    "name"        : "Adobe Creative Suite",
+    "logo"        : "fab fa-adobe",
+    "skills"      : ["Photoshop", "Illustrator", "Premiere", "After Effects"],
+    "levels"      : [4, 3, 2, 2]
+    },
+{
+    "name"        : "Business Intelligence",
+    "logo"        : "far fa-chart-bar",
+    "skills"      : ["Tableau", "Power BI"],
+    "levels"      : [4, 3]
+    },
+{
+    "name"        : "Programming",
+    "logo"        : "fas fa-terminal fa-xs",
+    "skills"      : ["HTML", "CSS", "JavaScript", "VBA", "R", "SQL"],
+    "levels"      : [4, 3, 2, 3, 2, 2]
+    } ]

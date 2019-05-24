@@ -1,0 +1,1 @@
+Record the sounds with at least .3s intervals of silence at 100% volume

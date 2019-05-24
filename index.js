@@ -2,7 +2,7 @@
 //Our express application
 const express = require('express');
 const app = express();
-const cookieParser = require('cookie-parser')
+const cookieParser = require('cookie-parser');
 
 //The i18n module is loaded
 const i18n = require('i18n');
@@ -15,7 +15,7 @@ const handlebars = require('express-handlebars').create(require('./libs/hbsconf.
 //________________i18n_CONFIG______________________
 i18n.configure({
     //Available languages
-    locales: ['en', 'fr','es','de','it','da'], 
+    locales: ['en', 'fr','es','de', 'it', 'da'], 
 
     //Cookie name for preference storage
     cookie: 'locale', 
@@ -119,8 +119,8 @@ app.get('/', function (req, res) {
 });
 
 //TEST PAGE /!\
-app.get('/page1', function (req, res) {
-    res.render('page1');
+app.get('/skills', function (req, res) {
+    res.render('skills');
 });
 
 //Change language and redirect to previous page

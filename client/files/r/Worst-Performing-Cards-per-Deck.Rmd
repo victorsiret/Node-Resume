@@ -1,0 +1,65 @@
+---
+title: "Worst Performing Cards"
+output: html_document
+---
+<h1>Introduction</h1>
+
+<p>Anki is a SRS tool I use mainly for language learning, as well as remembering models, definitions and other pieces of information. An SRS (spaced repetition software) is a tool which allows you to create flashcards which are then presented to you at increasingly long intervals according to how well you recall the information.</p>
+
+<p>Anki provides built-in statistics which offer some global insights. Here the goal was to focus on specific cards, because while my global statistics are good, with low repeat rates, some specific cards offer more trouble than others. Understanding why and finding a solution to these problem cards will allow me to perform better later on and to understand which type of card design works best with my mindset.</p>
+
+<p>Fortunately, Anki stores all card and review information in an SQLite database, easily accessible within the AppData folder on Windows. Click <a href="https://github.com/ankidroid/Anki-Android/wiki/Database-Structure">here</a> for information on its structure.</p>
+
+<h1>Load Libraries</h1>
+
+<p>To explore this data we will need some tools to make SQL queries and to parse JSON data.</p>
+```{r}
+library(RSQLite)
+library(rjson)
+```
+
+<h1>SQL Queries to Load Anki Data</h1>
+<p>We first save the path to the file, create an SQL connection variable for easy re-use. With these we create two queries, one for deck info (the categories for flashcards) which will help us identify what deck the cards belong to and the second to sort the worst performing cards (measured by the proportion of redos per review) and the information they contain.</p>
+```{r}
+#Set path with the "collection.anki2" file, which is an SQLite table.
+dbpath <- "C:/Users/VictorSiret/AppData/Roaming/Anki2/Victor/collection.anki2"
+con = dbConnect(RSQLite::SQLite(),dbname=dbpath)
+
+#Query Cards with the Most Redos per Review with SQL
+worstCards <- dbGetQuery(con,'WITH Worst_Cards_Top_5 AS (SELECT CAST(cards.did As TEXT) As did, 
+  notes.sfld As Content, 
+  ROUND(CAST(COUNT(CASE WHEN revlog.ease = 1 THEN 1 END) AS float)/COUNT(revlog.ease),2) As RedoRate, 
+  COUNT(CASE WHEN revlog.ease = 1 THEN 1 END) As NumberRedo
+	  FROM revlog 
+	  INNER JOIN cards ON revlog.cid=cards.id
+	  INNER JOIN notes ON cards.nid=notes.id
+	  GROUP BY notes.flds
+	  ORDER BY cards.did, 100*COUNT(CASE WHEN revlog.ease = 1 THEN 1 END)/COUNT(revlog.ease) DESC), 
+	  Deck_Info AS (SELECT key AS ID, json_extract(decks, "$." || key || ".name") AS Name FROM col, json_each(col.decks))
+	  
+SELECT Deck_Info.Name AS DeckName, Content, RedoRate FROM Worst_Cards_Top_5 
+	  INNER JOIN Deck_Info ON Deck_Info.ID=Worst_Cards_Top_5.did
+	  WHERE RedoRate > 0.2 AND NumberRedo > 4
+	  ORDER BY DeckName, RedoRate DESC;')
+```
+
+<h1>Shorten Strings</h1>
+
+<p>We shorten the strings for a cleaner output.</p>
+```{r}
+#Shorten "Content" strings to have dataframe print more cleanly
+worstCards[,2] <- sapply(worstCards[,2], substring, 0, 25)
+```
+
+<h1>Display Worst Performing Cards</h1>
+
+<p>Using the WITH statement in SQL the extraction of the table does everything in one go. One query gets the worst performing cards and the other e</p>
+```{r}
+#Display the result
+worstCards
+```
+
+
+```{r}
+dbDisconnect(con)
+```

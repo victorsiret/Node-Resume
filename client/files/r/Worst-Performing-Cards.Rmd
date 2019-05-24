@@ -1,0 +1,98 @@
+---
+title: "Worst Performing Cards"
+output: html_document
+---
+<h1>Introduction</h1>
+
+<p>Anki is a SRS tool I use mainly for language learning, as well as remembering models, definitions and other pieces of information. An SRS (spaced repetition software) is a tool which allows you to create flashcards which are then presented to you at increasingly long intervals according to how well you recall the information.</p>
+
+<p>Anki provides built-in statistics which offer some global insights. Here the goal was to focus on specific cards, because while my global statistics are good, with low repeat rates, some specific cards offer more trouble than others. Understanding why and finding a solution to these problem cards will allow me to perform better later on and to understand which type of card design works best with my mindset.</p>
+
+<p>Fortunately, Anki stores all card and review information in an SQLite database, easily accessible within the AppData folder on Windows. Click <a href="https://github.com/ankidroid/Anki-Android/wiki/Database-Structure">here</a> for information on its structure.</p>
+
+<h1>Load Libraries</h1>
+
+<p>To explore this data we will need some tools to make SQL queries and to parse JSON data.</p>
+```{r}
+library(RSQLite)
+library(rjson)
+```
+
+<h1>SQL Queries to Load Anki Data</h1>
+<p>We first save the path to the file, create an SQL connection variable for easy re-use. With these we create two queries, one for deck info (the categories for flashcards) which will help us identify what deck the cards belong to and the second to sort the worst performing cards (measured by the proportion of redos per review) and the information they contain.
+```{r}
+#Set path with the "collection.anki2" file, which is an SQLite table.
+dbpath <- "C:/Users/VictorSiret/AppData/Roaming/Anki2/Victor/collection.anki2"
+con = dbConnect(RSQLite::SQLite(),dbname=dbpath)
+
+#Query Cards with the Most Redos per Review with SQL
+worstCards <- dbGetQuery(con,'SELECT CAST(cards.did As TEXT) As did, notes.flds As Content, ROUND(CAST(COUNT(CASE WHEN revlog.ease = 1 THEN 1 END) AS float)/COUNT(revlog.ease),2) As RedoRate, COUNT(CASE WHEN revlog.ease = 1 THEN 1 END) As NumberRedo FROM revlog 
+  INNER JOIN cards ON revlog.cid=cards.id
+  INNER JOIN notes ON cards.nid=notes.id
+  GROUP BY notes.flds
+  ORDER BY 100*COUNT(CASE WHEN revlog.ease = 1 THEN 1 END)/COUNT(revlog.ease) DESC
+  LIMIT 15;')
+
+#Get deck info - from the decks field in the col table
+deckinfo <- as.character(dbGetQuery(con,'SELECT decks FROM col'))
+decks <- fromJSON(deckinfo)
+```
+
+<h1>Extraction of the Deck Data and put it into Dataframe</h1>
+
+<p>We cannot directly extract deck names and deck ids (did) since "col" is stored in a JSON format, so we create a dataframe with the decks which we will bind to our poor performing decks query.</p>
+```{r}
+names <- c()
+did <- names(decks)
+for(i in 1:length(did))
+{
+  names[i] <- decks[[did[i]]]$name
+}
+
+decks <- data.frame(cbind(did,names))
+
+#Display Decks dataframe
+decks
+```
+
+<h1>Clean-up of Flashcard Data and Merge with Deck Names</h1>
+
+<p>Displaying the worstCards dataframe directly, there is html code, as per the format Anki stores them in. We want to remove this, using the regular expression "&#60;.*?&#62;" which gets rid of any html tags. We do not need to get rid of html character entities in the form of &#38;xx; because there are none present here.</p>
+
+<p>The data also contains the back face of flashcards (everything after the 0x01 control character), so we get rid of it using the control character regular expression and everything which comes after by searching for it using the "[[:cntrl:]].*" expression.</p>
+
+<p>Finally, the long text present in some card faces makes the dataframe display poorly in the markdown. For the sake of clarity we reduce the content field to 21 characters, which still enables me to identify the card in question while making the dataframe more readable.</p>
+```{r}
+#Loop to clean the text of "flds", remove HTML tags, the back face of flashcards (everything after the 0x01 control character) and reduces the string length for it to fit better when we display the dataframe.
+for(i in 1:nrow(worstCards))
+{
+  worstCards[i, 2] = gsub("<.*?>", "", worstCards[i, 2])
+  worstCards[i, 2] = gsub("[[:cntrl:]].*", "", worstCards[i, 2])
+  worstCards[i, 2] = substr(worstCards[i, 2], 0, 20)
+}
+
+#We merge in the deck names
+worstCards <- merge(decks, worstCards,by="did")
+
+#We re-order by error rate
+worstCards <- worstCards[order(-worstCards$RedoRate),]
+```
+
+<h1>Display Worst Performing Cards</h1>
+
+<p>Here we see that many of the worst performing cards are in languages. Some are lengthy cards like reflexive verbs which include long lists to memorize. Others are short like quotes and the programming and marketing cards. These cards are useful to extract to either decide they are not useful, which explains why I am repeating them so much or to focus on them because I confuse them easily.</p>
+
+<p>In German many of them are specific cases. Compliance is "Einhaltung" which I am failing at remembering because I do not remember the compounds that compose it well, or Behavior which has a tricky non-standard plural form "Verhalten" becomes "Verhaltensweisen". In Danish, many of the words are tricky, some of them have "ene" plural endings while others have "erne" endings.</p>
+
+<p>In CSS, and more broadly in markup/programming language decks, these are cards I seldom review, which explains why they have high redo rates, while having low numbers of redos. This can be explained by their relatively low usefulness. It's easier to look up a problem on Google than to remember vast amounts of CSS properties. I have found in general, that for proficiency in a programming or markup language comes with constant coding and the experience of SRS flashcards was frustrating, leading either to botching my reviews and getting some syntax wrong, or having to review it once a day. Based on this, it would be wiser to get rid of the cards altogether or find a way to make them useful.</p>
+
+<p>Focusing on all of these exceptions, or learning the rules which explain them will help me in my reviews to be more performant.</p>
+```{r}
+#Display the result
+worstCards
+```
+
+
+```{r}
+dbDisconnect(con)
+```

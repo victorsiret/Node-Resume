@@ -1,5 +1,5 @@
 <!--____________________________________OVERVIEW____________________________________-->
-<div class="overview" uk-scrollspy="cls: uk-animation-slide-right">
+<div class="top-section section" uk-scrollspy="cls: uk-animation-slide-right">
     <!-- Header -->
     <h2>{{i18n "Overview"}}</h2>
 
@@ -7,12 +7,10 @@
     <p>
         {{i18n "overviewText"}}
     </p>
-
 </div>
-<br><br>
 
 <!--____________________________________EDUCATION___________________________________-->
-<div uk-scrollspy="cls: uk-animation-slide-right">
+<div class="section" uk-scrollspy="cls: uk-animation-slide-right">
     <!-- Header -->
     <h2>{{i18n "Education"}}</h2>
 
@@ -31,7 +29,7 @@
             </a>
 
             <!-- Dropdown -->
-            <div class="uk-accordion-content">
+            <div class="uk-accordion-content sub-section">
 
                 <!-- Logo Grid -->
                 <div class="uk-grid">
@@ -75,12 +73,11 @@
     </ul>
 
 </div>
-<br><br>
 
 
 
 <!--____________________________________EXPERIENCE___________________________________-->
-<div uk-scrollspy="cls: uk-animation-slide-right">
+<div class="section" uk-scrollspy="cls: uk-animation-slide-right">
 
     <!-- Header -->
     <h2>{{i18n "Experience"}}</h2>
@@ -90,10 +87,10 @@
 
         <!-- Template -->
         {{#arrExp}}
-        <li>
+        <li class="sub-section">
 
             <!-- Title -->
-            <a class="uk-accordion-title" href="#">
+            <a class="uk-accordion-title sub-section-sm" href="#">
                 <!-- For Desktop -->
                 <span class="phoneHide">{{i18n this.title}}</span>
                 <!-- For Phone -->
@@ -108,10 +105,8 @@
                 <p>
                     {{i18n this.aboutExperience}}
                 </p>
-                <a class="eplinks" href="{{i18n this.aboutLink}}">About</a>
-                </a>
+                <a class="eplinks" href="{{i18n this.aboutLink}}">About</a><br><br>
             </div>
-            <br>
             
             <!-- Logo Grid -->
             <div class="uk-grid">
@@ -128,19 +123,17 @@
                     <img class="logos" src="./icons/logos/{{this.id}}.png">
                 </div> 
             </div>
-            <br><br>
         </li>
-    {{/arrExp}}
+        {{/arrExp}}
 
     </ul>
 
 </div>
-<br><br>
 
 
 
 <!--____________________________________LANGUAGE___________________________________-->
-<div uk-scrollspy="cls: uk-animation-slide-right">
+<div class="section language" uk-scrollspy="cls: uk-animation-slide-right">
 
     <!-- Header -->
     <h2>{{i18n "Languages"}}</h2>
@@ -152,14 +145,13 @@
         {{#arrLan}}
         <li>
             <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/{{this.id}}.png">&nbsp;&nbsp;&nbsp;{{i18n this.name}} - {{i18n this.level}}</a>
-            <div class="uk-accordion-content">
+            <div class="uk-accordion-content sub-section">
                 <p>{{i18n this.desc}}</p>
                 <ul>
-                <li class="{{i18n this.academic}}">{{i18n this.academic}}</li>
-                <li class="{{i18n this.professional}}">{{i18n this.professional}}</li>
-                <li class="{{i18n this.personal}}">{{i18n this.personal}}</li>
+                    <li class="{{i18n this.academic}}">{{i18n this.academic}}</li>
+                    <li class="{{i18n this.professional}}">{{i18n this.professional}}</li>
+                    <li class="{{i18n this.personal}}">{{i18n this.personal}}</li>
                 </ul>
-                <br>
             </div>
         </li>
         {{/arrLan}}
@@ -167,12 +159,11 @@
     </ul>
 
 </div>
-<br><br>
 
 
 
 <!--_____________________________________SKILLS____________________________________-->
-<div uk-scrollspy="cls: uk-animation-slide-right">
+<div class="section" uk-scrollspy="cls: uk-animation-slide-right">
 
     <!-- Header -->
     <h2>{{i18n "Skills"}}</h2>
@@ -184,10 +175,9 @@
         {{#arrSki}}
         <li>
             <a class="uk-accordion-title" href="#"><i class="{{this.logo}}"></i>&nbsp;&nbsp;&nbsp;{{this.name}}</a>
-            <div class="uk-accordion-content uk-grid">
+            <div class="uk-accordion-content uk-grid sub-section">
                 <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
                     {{#each this.skills}}<p>{{this}}</p>{{/each}}
-                    <br>
                 </div>
                 <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
                     {{#each this.levels}}<p>{{{skillHTML this}}}</p>{{/each}}
@@ -200,12 +190,11 @@
     </ul>
 
 </div>
-<br><br>
 
 
 
 <!--___________________________________INTERESTS___________________________________-->
-<div uk-scrollspy="cls: uk-animation-slide-right">
+<div class="section" uk-scrollspy="cls: uk-animation-slide-right">
 
     <!-- Header -->
     <h2>{{i18n "Interests"}}</h2>
@@ -217,7 +206,7 @@
         {{#arrInt}}
         <li>
             <a class="uk-accordion-title" href="#"><i class="{{this.logo}}"></i>&nbsp;&nbsp;&nbsp;{{i18n this.name}}</a>
-            <div class="uk-accordion-content">
+            <div class="uk-accordion-content sub-section">
                 <p>{{i18n this.desc}}</p>
                 <div class="uk-child-width-1-6@l uk-child-width-1-3" uk-grid uk-lightbox="animation: slide">
 
@@ -229,7 +218,6 @@
                     </div>
                     {{/each}}
                 </div>
-                <br><br>
             </div>
         </li>
         {{/arrInt}}
@@ -237,4 +225,3 @@
     </ul>
 
 </div>
-<br><br>

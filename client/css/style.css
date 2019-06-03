@@ -80,14 +80,19 @@
 }
 
 /* Link Boxes */
-.sidebar .links {
+.sidebar .contact-links {
   padding: 0px 30px;
 }
-.sidebar .links2 {
+.sidebar .social-links {
   padding: 0px 65px;
 }
-.sidebar .links3 {
+.sidebar .lang-links {
   padding: 0px 50px;
+}
+
+.sidebar .lang-links a:hover {
+  filter:brightness(250%);
+  -webkit-filter: brightness(250%);
 }
 
 /* Contact */
@@ -126,15 +131,29 @@ ul {
 }
 
 /* SUBPARTS */
+/* Section */
+#main .top-section {
+  margin-top: 85px;
+}
+
+#main .section {
+  margin-bottom: 85px;
+}
+
+#main .sub-section {
+  margin-bottom: 60px;
+}
+
+#main .sub-section-sm {
+  margin-bottom: 20px;
+}
+
 /* Headers */
 #main h2 {
   font-weight: 700;
 }
 
 /* Paragraphs */
-#main .overview {
-  margin-top: 90px;
-}
 
 #main p {
   text-align: justify;
@@ -148,10 +167,14 @@ ul {
 
 .logos {
   max-width: 120px;
-  -webkit-filter: drop-shadow(1px 1px 0 rgb(151, 151, 151))
-                  drop-shadow(-1px -1px 0 rgb(151, 151, 151));
-  filter: drop-shadow(1px 1px 0 rgb(151, 151, 151)) 
-          drop-shadow(-1px -1px 0 rgb(151, 151, 151));
+  -webkit-filter: drop-shadow(1px 1px 0 rgb(181, 181, 181))
+                  drop-shadow(-1px 1px 0 rgb(181, 181, 181))
+                  drop-shadow(1px -1px 0 rgb(181, 181, 181)) 
+                  drop-shadow(-1px -1px 0 rgb(181, 181, 181));
+  filter: drop-shadow(1px 1px 0 rgb(181, 181, 181))
+          drop-shadow(-1px 1px 0 rgb(181, 181, 181))
+          drop-shadow(1px -1px 0 rgb(181, 181, 181)) 
+          drop-shadow(-1px -1px 0 rgb(181, 181, 181));
 }
 
 .logosPhone {

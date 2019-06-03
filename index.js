@@ -103,24 +103,24 @@ app.use(i18n.init);
 
 //Skills
     //Load Array (this one is already made to spec)
-    const arrSki = require('./controllers/skills.json');
+    const arrSki = require('./controllers/skills.json')[0];
+    const arrSkiDetail = require('./controllers/skills.json')[1];
 
 //Interests
     //Load Array
     const arrInt = require('./controllers/interests.json');
 
-    const tommy = ["1", "2", "3"]
 
 
 //________________RENDER_PAGES_________________________
 //Render home page
 app.get('/', function (req, res) {
-    res.render('home', {arrEdu, arrExp, arrLan, arrSki, arrInt, tommy});
+    res.render('home', {arrEdu, arrExp, arrLan, arrSki, arrInt});
 });
 
 //TEST PAGE /!\
 app.get('/skills', function (req, res) {
-    res.render('skills');
+    res.render('skills', {arrSkiDetail});
 });
 
 //Change language and redirect to previous page

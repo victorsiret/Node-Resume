@@ -1,24 +1,72 @@
-[ {
-    "name"        : "Microsoft Office",
-    "logo"        : "fab fa-windows",
-    "skills"      : ["Word", "Excel", "Powerpoint", "Access"],
-    "levels"      : [4, 4, 4, 2]
+[
+    [ {
+        "name"        : "Microsoft Office",
+        "logo"        : "fab fa-windows",
+        "skills"      : ["Word", "Excel", "Powerpoint", "Access"],
+        "levels"      : [4, 4, 4, 2]
+        },
+    {
+        "name"        : "Adobe Creative Suite",
+        "logo"        : "fab fa-adobe",
+        "skills"      : ["Photoshop", "Illustrator", "Premiere", "After Effects"],
+        "levels"      : [4, 3, 2, 2]
+        },
+    {
+        "name"        : "Business Intelligence",
+        "logo"        : "far fa-chart-bar",
+        "skills"      : ["Tableau", "Power BI"],
+        "levels"      : [4, 3]
+        },
+    {
+        "name"        : "Programming",
+        "logo"        : "fas fa-terminal fa-xs",
+        "skills"      : ["HTML", "CSS", "JavaScript", "VBA", "R", "SQL", "Python"],
+        "levels"      : [4, 3, 2, 3, 2, 2, 1]
+        } ],
+
+    [ {
+        "name"        : "Graphic Design",
+        "examples"    : [ {"name"       : "FV Logo made using Illustrator",
+                           "icon"       : "fas fa-registered",
+                           "description": "This is a logo designed for an entrepreneurship course project with a friend. FV is a custom motorcycle garage and lifestyle brand selling accessories.",
+                           "photo"      : "this-cv",
+                           "link"       : "https://github.com/victorsiret/Node-Resume"
+                        },
+                          {"name"       : "Python Sound Splitter",
+                           "icon"       : "fab fa-python",
+                           "description": "To create sound clips of Danish words for Anki cards, I used a small Python script which splits longer sound clips and then arranges the results in folders named like the files they were splitting.",
+                           "photo"      : "pic2",
+                           "link"       : "https://github.com/HoloH/Website_Creation_2018"
+                         } ]
     },
-{
-    "name"        : "Adobe Creative Suite",
-    "logo"        : "fab fa-adobe",
-    "skills"      : ["Photoshop", "Illustrator", "Premiere", "After Effects"],
-    "levels"      : [4, 3, 2, 2]
+    {
+        "name"        : "HTML, CSS and JavaScript",
+        "examples"    : [ {"name"       : "This CV",
+                           "icon"       : "fab fa-node-js",
+                           "description": "This CV is built using a Node JS server, Express, Express-Handlebars for templating, and a multi-language module called i18n.",
+                           "photo"      : "this-cv",
+                           "link"       : "https://github.com/victorsiret/Node-Resume"
+                        },
+                          {"name"       : "The HikeExchange",
+                           "icon"       : "fab fa-node-js",
+                           "description": "This website was built for a website creation course in a group of three. It is a website built to share hiking routes. It is built on Node JS, with Express, Handlebars for templating and a Mongo DB database. I worked mainly on the back-end, everything related to the server and database.",
+                           "photo"      : "pic2",
+                           "link"       : "https://github.com/HoloH/Website_Creation_2018"
+                         } ]
     },
-{
-    "name"        : "Business Intelligence",
-    "logo"        : "far fa-chart-bar",
-    "skills"      : ["Tableau", "Power BI"],
-    "levels"      : [4, 3]
-    },
-{
-    "name"        : "Programming",
-    "logo"        : "fas fa-terminal fa-xs",
-    "skills"      : ["HTML", "CSS", "JavaScript", "VBA", "R", "SQL"],
-    "levels"      : [4, 3, 2, 3, 2, 2]
+    {
+        "name"        : "SQL, R and Python",
+        "examples"    : [ {"name"       : "Analysis of Worst Performing Cards on Anki using R and SQL",
+                           "icon"       : "fas fa-registered",
+                           "description": "Anki is a SSR tool (spaced repetition) used to create and learn multimedia flashcards. I used R and SQL to query Anki's SQLite database and find which cards were performing worst to better understand which cards were poorly made or learned.",
+                           "photo"      : "this-cv",
+                           "link"       : "https://github.com/victorsiret/Node-Resume"
+                        },
+                          {"name"       : "Python Sound Splitter",
+                           "icon"       : "fab fa-python",
+                           "description": "To create sound clips of Danish words for Anki cards, I used a small Python script which splits longer sound clips and then arranges the results in folders named like the files they were splitting.",
+                           "photo"      : "pic2",
+                           "link"       : "https://github.com/HoloH/Website_Creation_2018"
+                         } ]
     } ]
+]

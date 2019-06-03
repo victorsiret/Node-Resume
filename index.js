@@ -131,7 +131,6 @@ app.get('/in-:locale', function (req, res) {
 
 
 
-
 //________________USE_STATIC_FILES_______________________
 app.use(express.static('client'));
 

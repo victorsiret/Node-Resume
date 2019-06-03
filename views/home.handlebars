@@ -174,7 +174,7 @@
         <!-- Template -->
         {{#arrSki}}
         <li>
-            <a class="uk-accordion-title" href="#"><i class="{{this.logo}}"></i>&nbsp;&nbsp;&nbsp;{{this.name}}</a>
+            <a class="uk-accordion-title" href="#"><i class="{{this.logo}}"></i>&nbsp;&nbsp;&nbsp;{{i18n this.name}}</a>
             <div class="uk-accordion-content uk-grid sub-section">
                 <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
                     {{#each this.skills}}<p>{{this}}</p>{{/each}}
@@ -186,6 +186,15 @@
             </div>
         </li>
         {{/arrSki}}
+
+        <!-- More -->
+        <li>
+            <a class="uk-accordion-title" href="#"><i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;&nbsp;{{i18n "More"}}</a>
+            <div class="uk-accordion-content uk-grid sub-section">
+                <p><a href="skills">See here</a> for examples of projects done using the tools mentionned above.</p>
+                
+            </div>
+        </li>
 
     </ul>
 

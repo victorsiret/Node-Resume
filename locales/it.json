@@ -97,7 +97,7 @@
 	"Overview": "Panoramica",
 	"overviewText": "Sono un candidato di orientamento internazionale che ha lavorato e studiato in diversi paesi e lingue. Attualmente sono sulla buona strada per laurearmi nel settembre 2019 dopo aver completato al meglio il mio stage finale in Germania. Sono interessato ad approfondire le mie conoscenze e competenze nella tecnologia di analisi dei dati e nella gestione di progetti.",
 	"Education": "Formazione",
-	"Experience": "L'esperienza",
+	"Experience": "Esperienza",
 	"Languages": "Lingue",
 	"Skills": "Competenze",
 	"Interests": "Interessi",
@@ -110,5 +110,10 @@
 	"Psychology": "Psicologia",
 	"desc-draw": "Alcuni esempi dei miei disegni e fotomontaggi surreali fatti su Photoshop utilizzando foto personali.",
 	"desc-tinker": "Foto della mia bicicletta a scatto fisso costruita con un telaio stradale Peugeot d'epoca e di una barra costruita da zero.",
-	"desc-psyc": "Ecco una raccolta dei miei libri di psicologia preferiti."
+	"desc-psyc": "Ecco una raccolta dei miei libri di psicologia preferiti.",
+	"Microsoft Office": "Microsoft Office",
+	"Adobe Creative Suite": "Adobe Creative Suite",
+	"Business Intelligence": "Business Intelligence",
+	"Programming": "Programmazione",
+	"France": "Francia"
 }

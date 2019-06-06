@@ -29,7 +29,7 @@
             </a>
 
             <!-- Dropdown -->
-            <div class="uk-accordion-content sub-section">
+            <div class="uk-accordion-content">
 
                 <!-- Logo Grid -->
                 <div class="uk-grid">
@@ -45,7 +45,6 @@
                         <img class="uk-vertical-align-middle logos" src="./icons/logos/{{this.id}}.png">
                     </div>
                 </div>
-                <br>
 
                 <!-- Links and Courses -->
                 <a class="eplinks" href="http://www.essec.edu/en/pages/about-essec/2/">About</a>
@@ -64,6 +63,7 @@
                     <li>Consumer Behaviour</li>
                     <li>Anthropology of Luxury Brands</li>
                 </ul>
+                
 
             </div>
 
@@ -87,10 +87,10 @@
 
         <!-- Template -->
         {{#arrExp}}
-        <li class="sub-section">
+        <li>
 
             <!-- Title -->
-            <a class="uk-accordion-title sub-section-sm" href="#">
+            <a class="uk-accordion-title" href="#">
                 <!-- For Desktop -->
                 <span class="phoneHide">{{i18n this.title}}</span>
                 <!-- For Phone -->
@@ -105,13 +105,14 @@
                 <p>
                     {{i18n this.aboutExperience}}
                 </p>
-                <a class="eplinks" href="{{i18n this.aboutLink}}">About</a><br><br>
+                <a class="eplinks" href="{{i18n this.aboutLink}}">About</a>
             </div>
             
             <!-- Logo Grid -->
             <div class="uk-grid">
                 <div class="uk-width-5-6@l uk-width-3-4@s">
-                <ul>
+                <ul class="sub-section">
+                    <br>
                     <li class="{{i18n this.task1}}">{{i18n this.task1}}</li>
                     <li class="{{i18n this.task2}}">{{i18n this.task2}}</li>
                     <li class="{{i18n this.task3}}">{{i18n this.task3}}</li>
@@ -145,9 +146,9 @@
         {{#arrLan}}
         <li>
             <a class="uk-accordion-title" href="#"><img class="flag-icon" src="./icons/flags/{{this.id}}.png">&nbsp;&nbsp;&nbsp;{{i18n this.name}} - {{i18n this.level}}</a>
-            <div class="uk-accordion-content sub-section">
+            <div class="uk-accordion-content">
                 <p>{{i18n this.desc}}</p>
-                <ul>
+                <ul class="sub-section">
                     <li class="{{i18n this.academic}}">{{i18n this.academic}}</li>
                     <li class="{{i18n this.professional}}">{{i18n this.professional}}</li>
                     <li class="{{i18n this.personal}}">{{i18n this.personal}}</li>
@@ -175,8 +176,8 @@
         {{#arrSki}}
         <li>
             <a class="uk-accordion-title" href="#"><i class="{{this.logo}}"></i>&nbsp;&nbsp;&nbsp;{{i18n this.name}}</a>
-            <div class="uk-accordion-content uk-grid sub-section">
-                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
+            <div class="uk-accordion-content uk-grid">
+                <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2 sub-section">
                     {{#each this.skills}}<p>{{this}}</p>{{/each}}
                 </div>
                 <div class="uk-width-1-6@l uk-width-1-4@s uk-width-1-2">
@@ -190,9 +191,8 @@
         <!-- More -->
         <li>
             <a class="uk-accordion-title" href="#"><i class="fas fa-chevron-circle-down"></i>&nbsp;&nbsp;&nbsp;{{i18n "More"}}</a>
-            <div class="uk-accordion-content uk-grid sub-section">
+            <div class="uk-accordion-content uk-grid">
                 <p><a href="skills">See here</a> for examples of projects done using the tools mentionned above.</p>
-                
             </div>
         </li>
 
@@ -215,9 +215,9 @@
         {{#arrInt}}
         <li>
             <a class="uk-accordion-title" href="#"><i class="{{this.logo}}"></i>&nbsp;&nbsp;&nbsp;{{i18n this.name}}</a>
-            <div class="uk-accordion-content sub-section">
+            <div class="uk-accordion-content">
                 <p>{{i18n this.desc}}</p>
-                <div class="uk-child-width-1-6@l uk-child-width-1-3" uk-grid uk-lightbox="animation: slide">
+                <div class="uk-child-width-1-6@l uk-child-width-1-3 sub-section" uk-grid uk-lightbox="animation: slide">
 
                     {{#each this.items}}
                     <div>
